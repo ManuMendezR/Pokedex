@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <script src="pokemon.js" defer></script>
+</head>
+<body">
+    <main class="main">
+        <header class="header-home">
+            <div class="container">
+                <div class="logo">
+                    <img src="assets/pokeball.svg" alt="Pokeball logo">
+                    <h1>Pokedex</h1>
+                </div>
+                <div class="search-wrapper">
+                    <div class="search-wrap">
+                        <img src="assets/search.svg" alt="Search-icon" class="search-icon">
+                        <input type="text" placeholder="Search" class="search-input body3-fonts" id="search-input">
+                    </div>
+                    <div class="sort-wrapper">
+                        <img src="assets/sorting.svg" alt="Sort-icon" class="sort-icon" id="sort-icon">
+                    </div>
+                    <div class="filter-wrapper">
+                        <p class="body2-fonts">Sort by:</p>
+                        <div class="filter-wrap">
+                            <input type="radio" id="number" name="filters" value="number" checked>
+                            <label for="number" class="body3-fonts">Numbes</label>
+                        </div>
+                        <div class="filter-wrap">
+                            <input type="radio" id="number" name="filters" value="name">
+                            <label for="name" class="body3-fonts">Name</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section class="pokemon-list">
+            <div class="container">
+                <div class="list-wrapper"></div>
+            </div>
+            <div class="pokemon-not-found">Pokemon not found</div>
+        </section>
+    </main>
+</body>
+</html>
