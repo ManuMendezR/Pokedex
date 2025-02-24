@@ -22,7 +22,6 @@ let allPokemons = [];
 
 // main()
 
-
 fetch(`https://pokeapi.co/api/v2/pokemon?limit=${MAX_POKEMON}`)
 .then((response) =>  response.json())
 .then((data) => {
@@ -33,10 +32,13 @@ fetch(`https://pokeapi.co/api/v2/pokemon?limit=${MAX_POKEMON}`)
 
 async function fetch_pokemon_data_before_redirect(id){
     try {
-        const[pokemon, pokemonSpecies] = await Promise.all[fetch(`https://pokeapi.co/api/v2/pokemon${id}`)
-            .then((response) =>  response.json()),
-            fetch(`https://pokeapi.co/api/v2/pokemon${id}`)
-            .then((response) =>  response.json())] 
+        const[pokemon, pokemonSpecies] = await Promise.
+        all([fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+            .then((response) =>  
+                response.json()
+        ),
+            fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
+            .then((response) =>  response.json()), ])
         return true
     } catch (error) {
         console.error("An error occurred while trying to fetch the data of the Pokemon before redirecting.")
@@ -48,7 +50,6 @@ function display_pokemons(pokemon){
 
     pokemon.forEach((pokemon) =>{
         const pokemonID = pokemon.url.split("/")[6];
-    
         const listItem = document.createElement("div");
         listItem.className = "list_item";
         listItem.innerHTML = `
