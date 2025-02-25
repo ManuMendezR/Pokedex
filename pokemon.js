@@ -38,7 +38,7 @@ async function fetch_pokemon_data_before_redirect(id){
                 response.json()
         ),
             fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
-            .then((response) =>  response.json()), ])
+            .then((response) =>  response.json()), ]);
         return true
     } catch (error) {
         console.error("An error occurred while trying to fetch the data of the Pokemon before redirecting.")
